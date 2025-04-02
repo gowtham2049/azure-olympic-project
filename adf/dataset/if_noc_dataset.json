@@ -1,0 +1,47 @@
+{
+	"name": "if_noc_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cintainer_p": {
+				"type": "string"
+			},
+			"folder_p": {
+				"type": "string"
+			},
+			"file_p": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "source to bronze"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().file_p",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().folder_p",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().cintainer_p",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

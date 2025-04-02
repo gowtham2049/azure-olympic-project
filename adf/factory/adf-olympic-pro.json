@@ -1,0 +1,9 @@
+{
+	"name": "adf-olympic-pro",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "<principalId>",
+		"tenantId": "<your-tenantId>"
+	}
+}
